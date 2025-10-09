@@ -1,0 +1,18 @@
+:root {
+  /* Colors */
+  --mint: #a8e6cf;
+  --mint-light: #c2f0e2;
+  --mint-dark: #6ec3a0;
+  --sky: #dff6ff;
+  --text: #003366;
+  --white: #ffffff;
+  --accent: #4fbdba;
+
+  /* Gradient */
+  --bg-gradient: linear-gradient(
+    180deg,
+    var(--mint) 0%,
+    var(--mint-light) 40%,
+    var(--sky) 100%
+  );
+}
