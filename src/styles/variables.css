@@ -6,7 +6,7 @@
   --sky: #dff6ff;
   --text: #003366;
   --white: #ffffff;
-  --accent: #4fbdba;
+  --accent: #51848f;
 
   /* Gradient */
   --bg-gradient: linear-gradient(
@@ -14,5 +14,12 @@
     var(--mint) 0%,
     var(--mint-light) 40%,
     var(--sky) 100%
+  );
+
+  --circle-gradient: radial-gradient(
+    circle,
+    var(--mint-light) 20%,
+    var(--mint) 70%,
+    transparent 100%
   );
 }

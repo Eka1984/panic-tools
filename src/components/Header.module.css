@@ -1,0 +1,64 @@
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 var(--space-4, 16px);
+  /* background: rgba(255, 255, 255, 0.6); */
+  backdrop-filter: blur(8px);
+  /* border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05); */
+}
+
+.logo {
+  font-size: 0.5rem; /* phones */
+  font-weight: 600;
+  margin: 0;
+  color: var(--text, #0d1b1e);
+}
+
+nav a {
+  text-decoration: none;
+  color: var(--text, #0d1b1e);
+  font-weight: 500;
+  font-size: 1rem;
+  margin: 0 1rem;
+  transition: transform 0.2s ease, color 0.2s ease;
+  display: inline-block;
+}
+
+nav a:hover {
+  transform: scale(1.1); /* zoom in slightly */
+}
+
+nav a.active {
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+/* ≥ 768px (tablets) */
+@media (min-width: 768px) {
+  .logo {
+    font-size: 1rem;
+  }
+
+  nav a {
+    font-size: 1.2rem;
+    margin: 0 1.25rem;
+  }
+}
+
+/* ≥ 1024px (desktops) */
+@media (min-width: 1024px) {
+  .logo {
+    font-size: 1rem;
+  }
+
+  nav a {
+    font-size: 1.3rem;
+    margin: 0 1.5rem;
+  }
+}

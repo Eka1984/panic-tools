@@ -1,0 +1,88 @@
+.page {
+  width: 100%;
+  /* max-width: 420px; */
+  margin: 0 auto;
+  padding: 24px env(safe-area-inset-right, 16px) 32px
+    env(safe-area-inset-left, 16px);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  align-items: center;
+  text-align: center;
+}
+
+.page h1 {
+  font-size: clamp(1.5rem, 4vw + 0.5rem, 2.5rem);
+  font-weight: 600;
+  text-align: center;
+  margin-bottom: 1rem;
+  color: var(--text, #0d1b1e);
+}
+
+.page p {
+  font-size: clamp(1rem, 1.5vw + 0.4rem, 1.25rem);
+  text-align: center;
+  line-height: 1.6;
+  max-width: 40ch;
+  margin: 0 auto 2rem;
+  color: var(--text, #0d1b1e);
+}
+
+.primary {
+  padding: 15px 40px;
+  background-color: var(--accent, #51848f);
+  color: white;
+  font-size: 16px;
+  border: 0;
+  border-radius: 12px;
+  cursor: pointer;
+}
+
+.ghost {
+  background: transparent;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  padding: 12px 16px;
+  border-radius: 10px;
+  font-size: 14px;
+}
+
+.circlePlaceholder {
+  /* Base: mobile-first */
+  width: 90%;
+  aspect-ratio: 1;
+  border-radius: 50%;
+
+  display: grid;
+  place-items: center;
+  font-weight: 700;
+  margin: 0 auto;
+}
+
+/* ≥ 640px (small tablets) */
+@media (min-width: 640px) {
+  .circlePlaceholder {
+    width: 85%;
+  }
+}
+
+/* ≥ 768px (tablets) */
+@media (min-width: 768px) {
+  .circlePlaceholder {
+    width: 70%;
+  }
+}
+
+/* ≥ 1024px (laptops) */
+@media (min-width: 1024px) {
+  .circlePlaceholder {
+    width: 60%;
+  }
+}
+
+/* ≥ 1280px (large screens) */
+@media (min-width: 1280px) {
+  .circlePlaceholder {
+    width: 50%;
+  }
+}
