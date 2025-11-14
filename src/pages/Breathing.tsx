@@ -1,8 +1,9 @@
 import styles from "./Breathing.module.css";
 import BreathingCircle from "../components/BreathingCircle";
-import { Navigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 export default function Breathing() {
+  const navigate = useNavigate();
   return (
     <main className={styles.page}>
       <h1>You’re safe. This will pass.</h1>
@@ -12,7 +13,9 @@ export default function Breathing() {
         <BreathingCircle />
       </div>
 
-      <button className={styles.primary}>Next exercise</button>
+      <button className={styles.primary} onClick={() => navigate("/grounding")}>
+        Next exercise
+      </button>
     </main>
   );
 }

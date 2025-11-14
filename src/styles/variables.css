@@ -18,8 +18,9 @@
 
   --circle-gradient: radial-gradient(
     circle,
-    var(--mint-light) 20%,
-    var(--mint) 70%,
+    var(--mint-light) 0%,
+    color-mix(in srgb, var(--mint-light), var(--mint-dark) 60%) 70%,
+    var(--mint-dark) 80%,
     transparent 100%
   );
 }

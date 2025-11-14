@@ -14,10 +14,13 @@
 }
 
 .logo {
-  font-size: 0.5rem; /* phones */
+  font-size: 1rem; /* phones */
   font-weight: 600;
   margin: 0;
   color: var(--text, #0d1b1e);
+  background-color: var(--mint-light, #a8e6cf);
+  padding: 6px 8px;
+  border-radius: 8px;
 }
 
 nav a {
