@@ -7,7 +7,7 @@ type PageContainerProps = {
 export default function PageContainer({ children }: PageContainerProps) {
   return (
     <div className={styles.container}>
-      <div className={styles.page}>{children}</div>
+      <div>{children}</div>
     </div>
   );
 }

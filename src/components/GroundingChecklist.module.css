@@ -1,0 +1,19 @@
+.heading {
+  margin-bottom: 3rem;
+  color: #0b5563;
+}
+
+/* Tablet + mobile */
+@media (max-width: 768px) {
+  .heading {
+    margin-bottom: 1.8rem;
+    font-size: 1.6rem;
+  }
+}
+
+/* Small phones */
+@media (max-width: 480px) {
+  .heading {
+    font-size: 1.4rem;
+  }
+}

@@ -22,7 +22,7 @@ export default function BreathingCircle() {
 
   useEffect(() => {
     if (step === "count") {
-      if (secondsLeft > 0) {
+      if (secondsLeft > 1) {
         const countdown = setTimeout(() => {
           setSecondsLeft((prev) => prev - 1);
         }, COUNT_LENGTH);
