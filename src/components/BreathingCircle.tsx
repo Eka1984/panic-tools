@@ -1,44 +1,24 @@
 import { useEffect, useState } from "react";
 import styles from "./BreathingCircle.module.css";
 
-const BREATH_DURATION = 4; // seconds to count
-const PAUSE_DURATION = 100; // ms to show "Breathe in" or "out"
-const COUNT_LENGTH = 1100;
+const DURATION = 4;
+const COUNT_INTERVAL = 1000;
+
+type Phase = "ready" | "in" | "in-hold" | "out" | "out-hold";
 
 export default function BreathingCircle() {
-  const [phase, setPhase] = useState<"in" | "in-hold" | "out" | "out-hold">(
-    "out"
-  );
-  const [step, setStep] = useState<"count" | "show">("count");
-  const [secondsLeft, setSecondsLeft] = useState(BREATH_DURATION);
+  const [phase, setPhase] = useState<Phase>("ready");
+  const [secondsLeft, setSecondsLeft] = useState(DURATION);
 
   useEffect(() => {
-    const kickstart = setTimeout(() => {
-      setPhase("in"); // this will trigger the scale-up animation
-    }, 100);
-
-    return () => clearTimeout(kickstart);
-  }, []);
-
-  useEffect(() => {
-    if (step === "count") {
+    const timer = setTimeout(() => {
       if (secondsLeft > 1) {
-        const countdown = setTimeout(() => {
-          setSecondsLeft((prev) => prev - 1);
-        }, COUNT_LENGTH);
-
-        return () => clearTimeout(countdown);
+        setSecondsLeft((prev) => prev - 1);
       } else {
-        // Countdown finished → show instruction
-        setTimeout(() => {
-          setStep("show");
-        }, COUNT_LENGTH); // show 1 for 1 sec before switching to text
-      }
-    } else if (step === "show") {
-      // After instruction is shown, switch phase and reset
-      const timeout = setTimeout(() => {
         setPhase((prev) => {
           switch (prev) {
+            case "ready":
+              return "in";
             case "in":
               return "in-hold";
             case "in-hold":
@@ -50,13 +30,12 @@ export default function BreathingCircle() {
               return "in";
           }
         });
-        setSecondsLeft(BREATH_DURATION);
-        setStep("count");
-      }, PAUSE_DURATION);
+        setSecondsLeft(DURATION);
+      }
+    }, COUNT_INTERVAL);
 
-      return () => clearTimeout(timeout);
-    }
-  }, [secondsLeft, step]);
+    return () => clearTimeout(timer);
+  }, [secondsLeft]);
 
   return (
     <div className={styles.circleWrapper}>
@@ -67,13 +46,15 @@ export default function BreathingCircle() {
           phase === "out-hold" && styles.outHold
         }`}
       />
+
       <div className={styles.textWrapper}>
         <p className={styles.text}>
-          {" "}
-          {phase === "in" && "Inhale"}
-          {phase === "out" && "Exhale"}
+          {phase === "ready" && "Get ready…"}
+          {phase === "in" && "Breathe in"}
+          {phase === "out" && "Breathe out"}
           {(phase === "in-hold" || phase === "out-hold") && "Hold"}
         </p>
+
         <p className={styles.text}>{secondsLeft}</p>
       </div>
     </div>
