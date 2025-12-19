@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import styles from "./BreathingCircle.module.css";
 
-const DURATION = 4;
+const DURATION = 1;
 const COUNT_INTERVAL = 1000;
 
 type Phase = "ready" | "in" | "in-hold" | "out" | "out-hold";
@@ -12,8 +12,8 @@ export default function BreathingCircle() {
 
   useEffect(() => {
     const timer = setTimeout(() => {
-      if (secondsLeft > 1) {
-        setSecondsLeft((prev) => prev - 1);
+      if (secondsLeft < 4) {
+        setSecondsLeft((prev) => prev + 1);
       } else {
         setPhase((prev) => {
           switch (prev) {
