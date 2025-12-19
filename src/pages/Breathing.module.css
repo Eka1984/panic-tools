@@ -69,20 +69,20 @@
 /* ≥ 768px (tablets) */
 @media (min-width: 768px) {
   .circlePlaceholder {
-    width: 70%;
+    width: 50%;
   }
 }
 
 /* ≥ 1024px (laptops) */
 @media (min-width: 1024px) {
   .circlePlaceholder {
-    width: 60%;
+    width: 50%;
   }
 }
 
 /* ≥ 1280px (large screens) */
 @media (min-width: 1280px) {
   .circlePlaceholder {
-    width: 50%;
+    width: 40%;
   }
 }
