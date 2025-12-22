@@ -1,0 +1,31 @@
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+}
+
+.progress {
+  display: flex;
+  gap: 8px;
+}
+
+.dot {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: gray;
+  opacity: 0.4;
+  transition: opacity 200ms ease;
+}
+
+.done {
+  background-color: var(--mint-dark);
+  opacity: 0.8;
+}
+
+.label {
+  font-size: 1.1rem;
+  color: var(--text);
+  opacity: 0.7;
+}
