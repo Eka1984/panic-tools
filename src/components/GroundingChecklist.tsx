@@ -1,4 +1,5 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import GroundingItem from "./GroundingItem";
 import styles from "./GroundingChecklist.module.css";
 
@@ -44,6 +45,7 @@ const groundingSteps: GroundingStep[] = [
 
 function GroundingChecklist() {
   const [checkedItems, setCheckedItems] = useState<Record<number, boolean>>({});
+  const navigate = useNavigate();
 
   function toggleItem(id: number) {
     setCheckedItems((prev) => ({
@@ -51,6 +53,14 @@ function GroundingChecklist() {
       [id]: !prev[id],
     }));
   }
+
+  const allChecked = groundingSteps.every((step) => checkedItems[step.id]);
+
+  useEffect(() => {
+    if (allChecked) {
+      navigate("/done");
+    }
+  }, [allChecked, navigate]);
 
   return (
     <div>
