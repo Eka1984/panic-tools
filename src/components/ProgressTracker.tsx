@@ -27,8 +27,6 @@ export default function ProgressTracker({ currentStep }: ProgressTrackerProps) {
           return <span key={index} className={dotClassName} />;
         })}
       </div>
-
-      <div className={styles.label}>{steps[currentStep]}</div>
     </div>
   );
 }
