@@ -20,6 +20,33 @@
   border-radius: 8px;
 }
 
+.nav {
+  position: absolute;
+  top: 60px; /* same as header height */
+  right: 16px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(8px);
+  padding: 0.75rem 1rem;
+  border-radius: 12px;
+
+  /* hidden state */
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(-8px);
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.open {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0);
+}
+
 nav a {
   text-decoration: none;
   color: var(--text, #0d1b1e);
@@ -38,6 +65,15 @@ nav a.active {
   font-weight: bold;
 }
 
+.burger {
+  font-size: 1.5rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+  line-height: 1;
+}
+
 /* ≥ 768px (tablets) */
 @media (min-width: 768px) {
   .logo {
@@ -47,6 +83,23 @@ nav a.active {
   nav a {
     font-size: 1rem;
     margin: 0 1.25rem;
+  }
+
+  .burger {
+    display: none;
+  }
+
+  .nav {
+    position: static;
+    flex-direction: row;
+    background: none;
+    backdrop-filter: none;
+    padding: 0;
+    gap: 0;
+
+    opacity: 1;
+    pointer-events: auto;
+    transform: none;
   }
 }
 
