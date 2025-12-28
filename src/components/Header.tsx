@@ -15,7 +15,7 @@ function Header() {
         aria-expanded={menuOpen}
         onClick={() => setMenuOpen((open) => !open)}
       >
-        ☰
+        {menuOpen ? "✕" : "☰"}
       </button>
 
       <nav className={`${styles.nav} ${menuOpen ? styles.open : ""}`}>
