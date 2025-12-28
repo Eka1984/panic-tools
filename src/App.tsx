@@ -1,4 +1,5 @@
 import { Routes, Route, useLocation } from "react-router-dom";
+import { AnimatePresence } from "framer-motion";
 import Breathing from "./pages/Breathing";
 import Grounding from "./pages/Grounding";
 import Done from "./pages/Done";
@@ -29,12 +30,14 @@ export default function App() {
         {currentStep !== undefined && (
           <ProgressTracker currentStep={currentStep} />
         )}
-        <Routes>
-          <Route path="/" element={<Breathing />} />
-          <Route path="/grounding" element={<Grounding />} />
-          <Route path="/done" element={<Done />} />
-          <Route path="*" element={<NotFound />} />
-        </Routes>
+        <AnimatePresence mode="wait">
+          <Routes location={location} key={location.pathname}>
+            <Route path="/" element={<Breathing />} />
+            <Route path="/grounding" element={<Grounding />} />
+            <Route path="/done" element={<Done />} />
+            <Route path="*" element={<NotFound />} />
+          </Routes>
+        </AnimatePresence>
       </PageContainer>
     </>
   );
