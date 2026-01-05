@@ -1,5 +1,5 @@
 import styles from "./Breathing.module.css";
-import BreathingCircle from "../components/BreathingCircle";
+import BreathingCircle from "../components/BreathingCircle/BreathingCircle";
 import { useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
 

@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import GroundingItem from "./GroundingItem";
+import GroundingItem from "../GroundingItem/GroundingItem";
 import styles from "./GroundingChecklist.module.css";
 
 type GroundingStep = {

@@ -1,4 +1,4 @@
-import GroundingChecklist from "../components/GroundingChecklist";
+import GroundingChecklist from "../components/GroundingChecklist/GroundingChecklist";
 import { motion } from "framer-motion";
 
 export default function Grounding() {
