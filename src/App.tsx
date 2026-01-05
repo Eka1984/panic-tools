@@ -6,7 +6,7 @@ import Done from "./pages/Done";
 import "./styles/app.css";
 import Header from "./components/Header/Header";
 import NotFound from "./pages/NotFound";
-import ScrollToTop from "./components/BreathingCircle/ScrollToTop/ScrollToTop";
+import ScrollToTop from "./components/ScrollToTop/ScrollToTop";
 import PageContainer from "./components/PageContainer/PageContainer";
 import ProgressTracker from "./components/ProgressTracker/ProgressTracker";
 
