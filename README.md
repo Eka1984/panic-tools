@@ -1,73 +1,86 @@
-# React + TypeScript + Vite
+# 🌿 Just Breathe
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+**Just Breathe** is a small web app designed to help calm panic attacks using guided breathing and grounding exercises. It focuses on simplicity, clarity, and being usable in moments of stress.
 
-Currently, two official plugins are available:
+🌐 **Live demo:** https://your-vercel-link-here
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## React Compiler
+## Why this app exists
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+I build _Just Breathe_ as a practical tool for moments when anxiety or panic makes it hard to think clearly. The goal is to create something minimal and gentle: no overwhelming options, no noise, just a few techniques that are easy to follow when you need them most.
 
-## Expanding the ESLint configuration
+This project is also a way for me to explore how thoughtful UI, animation, and structure can support users in emotionally sensitive situations.
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+---
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+## Features
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+### Current features
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+- Guided breathing exercise with visual animation
+- Grounding exercise to help refocus attention
+- Clean, distraction-free UI
+- Responsive design (mobile-first mindset)
+- Deployed and continuously updated
+
+### Planned / in progress
+
+- UI/UX refinements and accessibility improvements
+- Optional sound support for breathing and grounding exercises
+- Offline functionality using browser storage / PWA features
+
+---
+
+## Screenshot
+
+![Just Breathe screenshot](./assets/screenshot.png)
+
+---
+
+## Tech stack
+
+- **Frontend:** React + TypeScript
+- **Styling:** CSS Modules
+- **Build tool:** Vite
+- **CI/CD:** GitHub Actions + semantic-release
+- **Deployment:** Vercel
+
+---
+
+## Local development
+
+To run the project locally:
+
+```bash
+npm install
+npm run dev
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+Build for production:
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+npm run build
 ```
+
+---
+
+## Project status
+
+🚧 **Work in progress**
+
+This project is actively developed. Features, UI, and structure may change as the app evolves.
+
+---
+
+## Disclaimer
+
+This app is **not a medical device** and does not replace professional medical or psychological help.  
+It is intended as a supportive, self-help tool only.
+
+---
+
+## Feedback
+
+Feedback and suggestions are very welcome.  
+Feel free to open an issue or reach out if you have ideas or notice problems.
