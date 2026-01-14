@@ -1,8 +1,8 @@
 import { Routes, Route, useLocation } from "react-router-dom";
 import { AnimatePresence } from "framer-motion";
-import Breathing from "./pages/Breathing";
+import Breathing from "./pages/Breathing/Breathing";
 import Grounding from "./pages/Grounding";
-import Done from "./pages/Done";
+import Done from "./pages/Done/Done";
 import "./styles/app.css";
 import Header from "./components/Header/Header";
 import NotFound from "./pages/NotFound";
