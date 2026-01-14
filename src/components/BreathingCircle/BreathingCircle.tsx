@@ -3,33 +3,51 @@ import styles from "./BreathingCircle.module.css";
 
 const DURATION = 1;
 const COUNT_INTERVAL = 1000;
+const CYCLE_LENGTH = 4;
 
-type Phase = "ready" | "in" | "in-hold" | "out" | "out-hold";
+const PHASES = {
+  READY: "ready",
+  IN: "in",
+  IN_HOLD: "in-hold",
+  OUT: "out",
+  OUT_HOLD: "out-hold",
+} as const;
+
+type Phase = (typeof PHASES)[keyof typeof PHASES];
+
+const NEXT_PHASE: Record<Phase, Phase> = {
+  [PHASES.READY]: PHASES.IN,
+  [PHASES.IN]: PHASES.IN_HOLD,
+  [PHASES.IN_HOLD]: PHASES.OUT,
+  [PHASES.OUT]: PHASES.OUT_HOLD,
+  [PHASES.OUT_HOLD]: PHASES.IN,
+};
+
+const PHASE_LABEL: Partial<Record<Phase, string>> = {
+  [PHASES.READY]: "Get ready…",
+  [PHASES.IN]: "Breathe in",
+  [PHASES.OUT]: "Breathe out",
+  [PHASES.IN_HOLD]: "Hold",
+  [PHASES.OUT_HOLD]: "Hold",
+};
+
+const PHASE_CLASS: Partial<Record<Phase, string>> = {
+  [PHASES.IN]: styles.inhale,
+  [PHASES.OUT]: styles.exhale,
+  [PHASES.IN_HOLD]: styles.inHold,
+  [PHASES.OUT_HOLD]: styles.outHold,
+};
 
 export default function BreathingCircle() {
-  const [phase, setPhase] = useState<Phase>("ready");
+  const [phase, setPhase] = useState<Phase>(PHASES.READY);
   const [secondsLeft, setSecondsLeft] = useState(DURATION);
 
   useEffect(() => {
     const timer = setTimeout(() => {
-      if (secondsLeft < 4) {
+      if (secondsLeft < CYCLE_LENGTH) {
         setSecondsLeft((prev) => prev + 1);
       } else {
-        setPhase((prev) => {
-          switch (prev) {
-            case "ready":
-              return "in";
-            case "in":
-              return "in-hold";
-            case "in-hold":
-              return "out";
-            case "out":
-              return "out-hold";
-            case "out-hold":
-            default:
-              return "in";
-          }
-        });
+        setPhase((prev) => NEXT_PHASE[prev]);
         setSecondsLeft(DURATION);
       }
     }, COUNT_INTERVAL);
@@ -39,22 +57,9 @@ export default function BreathingCircle() {
 
   return (
     <div className={styles.circleWrapper}>
-      <div
-        className={`${styles.circle} ${phase === "in" && styles.inhale} ${
-          phase === "out" && styles.exhale
-        } ${phase === "in-hold" && styles.inHold} ${
-          phase === "out-hold" && styles.outHold
-        }`}
-      />
-
+      <div className={`${styles.circle} ${PHASE_CLASS[phase] ?? ""}`} />
       <div className={styles.textWrapper}>
-        <p className={styles.text}>
-          {phase === "ready" && "Get ready…"}
-          {phase === "in" && "Breathe in"}
-          {phase === "out" && "Breathe out"}
-          {(phase === "in-hold" || phase === "out-hold") && "Hold"}
-        </p>
-
+        <p className={styles.text}>{PHASE_LABEL[phase]}</p>
         <p className={styles.text}>{secondsLeft}</p>
       </div>
     </div>
