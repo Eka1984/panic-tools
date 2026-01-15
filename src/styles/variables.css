@@ -12,7 +12,6 @@
   /* Gradient */
   --bg-gradient: linear-gradient(
     180deg,
-    var(--mint) 0%,
     var(--mint-light) 40%,
     var(--sky) 100%
   );
