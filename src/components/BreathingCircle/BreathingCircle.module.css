@@ -73,13 +73,20 @@
   left: 50%;
   transform: translate(-50%, -50%);
   text-align: center;
-  color: var(--text, #0d1b1e);
+  /* color: var(--text, #0d1b1e); */
   z-index: 2;
 }
 
 .text {
-  font-size: 2rem !important;
+  font-size: 1rem !important;
   opacity: 1;
+  color: white !important;
+}
+
+.count {
+  font-size: 4rem !important;
+  color: white !important;
+  margin-bottom: 0.5rem;
 }
 
 @media (max-width: 1280px) {

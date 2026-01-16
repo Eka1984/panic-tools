@@ -18,7 +18,7 @@
 
   --circle-gradient: linear-gradient(
     135deg,
-    var(--mint-dark) 0%,
-    var(--mint-light) 100%
+    var(--accent) 0%,
+    var(--mint) 100%
   );
 }

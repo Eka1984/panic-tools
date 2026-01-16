@@ -59,8 +59,8 @@ export default function BreathingCircle() {
     <div className={styles.circleWrapper}>
       <div className={`${styles.circle} ${PHASE_CLASS[phase] ?? ""}`} />
       <div className={styles.textWrapper}>
-        <p className={styles.text}>{PHASE_LABEL[phase]}</p>
-        <p className={styles.text}>{secondsLeft}</p>
+        <div className={styles.count}>{secondsLeft}</div>
+        <div className={styles.text}>{PHASE_LABEL[phase]}</div>
       </div>
     </div>
   );
