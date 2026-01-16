@@ -16,11 +16,9 @@
     var(--sky) 100%
   );
 
-  --circle-gradient: radial-gradient(
-    circle,
-    var(--mint-light) 0%,
-    color-mix(in srgb, var(--mint-light), var(--lime-green) 60%) 70%,
-    var(--mint-dark) 80%,
-    transparent 100%
+  --circle-gradient: linear-gradient(
+    135deg,
+    var(--mint-dark) 0%,
+    var(--mint-light) 100%
   );
 }
