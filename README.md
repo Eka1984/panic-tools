@@ -2,7 +2,7 @@
 
 **Just Breathe** is a small web app designed to help calm panic attacks using guided breathing and grounding exercises. It focuses on simplicity, clarity, and being usable in moments of stress.
 
-🌐 **Live demo:** https://your-vercel-link-here
+🌐 **Live demo:** https://panic-tools.vercel.app/
 
 ---
 
