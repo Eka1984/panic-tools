@@ -38,11 +38,15 @@ const PHASE_CLASS: Partial<Record<Phase, string>> = {
   [PHASES.OUT_HOLD]: styles.outHold,
 };
 
-export default function BreathingCircle() {
+export default function BreathingCircle({ isRunning }: { isRunning: boolean }) {
   const [phase, setPhase] = useState<Phase>(PHASES.READY);
   const [secondsLeft, setSecondsLeft] = useState(DURATION);
 
   useEffect(() => {
+    if (!isRunning) {
+      return;
+    }
+
     const timer = setTimeout(() => {
       if (secondsLeft < CYCLE_LENGTH) {
         setSecondsLeft((prev) => prev + 1);
@@ -53,11 +57,23 @@ export default function BreathingCircle() {
     }, COUNT_INTERVAL);
 
     return () => clearTimeout(timer);
-  }, [secondsLeft]);
+  }, [secondsLeft, isRunning]);
+
+  useEffect(() => {
+    if (isRunning) return;
+
+    // Reset to initial state
+    setPhase(PHASES.READY);
+    setSecondsLeft(DURATION);
+  }, [isRunning]);
 
   return (
     <div className={styles.circleWrapper}>
-      <div className={`${styles.circle} ${PHASE_CLASS[phase] ?? ""}`} />
+      <div
+        className={`${styles.circle} ${PHASE_CLASS[phase] ?? ""} ${
+          isRunning ? styles.running : styles.stopped
+        }`}
+      />
       <div className={styles.textWrapper}>
         <div className={styles.count}>{secondsLeft}</div>
         <div className={styles.text}>{PHASE_LABEL[phase]}</div>
