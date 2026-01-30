@@ -8,28 +8,15 @@ import Header from "./components/Header/Header";
 import NotFound from "./pages/NotFound";
 import ScrollToTop from "./components/ScrollToTop/ScrollToTop";
 import PageContainer from "./components/PageContainer/PageContainer";
-import ProgressTracker from "./components/ProgressTracker/ProgressTracker";
 
 export default function App() {
   const location = useLocation();
-
-  const stepMap: Record<string, number> = {
-    "/": 0,
-    "/grounding": 1,
-    "/done": 2,
-  };
-
-  const currentStep = stepMap[location.pathname];
 
   return (
     <>
       <ScrollToTop />
       <Header />
       <PageContainer>
-        {" "}
-        {currentStep !== undefined && (
-          <ProgressTracker currentStep={currentStep} />
-        )}
         <AnimatePresence mode="wait">
           <Routes location={location} key={location.pathname}>
             <Route path="/" element={<Breathing />} />
