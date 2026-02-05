@@ -1,0 +1,28 @@
+.wrap {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin: 18px 0 16px;
+}
+
+.dot {
+  width: 26px;
+  height: 26px;
+  border-radius: 999px;
+  display: grid;
+  place-items: center;
+  font-size: 16px;
+  border: 1px solid rgba(15, 61, 76, 0.25);
+  background: rgba(255, 255, 255, 0.6);
+}
+
+.active {
+  transform: scale(1.05);
+  border: 1px solid rgba(11, 85, 99, 0.8);
+  background: rgba(255, 255, 255, 0.9);
+}
+
+.completed {
+  border: 1px solid rgba(11, 85, 99, 0.35);
+  background: rgba(11, 85, 99, 0.12);
+}
