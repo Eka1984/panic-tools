@@ -1,81 +1,68 @@
-import { useState, useEffect } from "react";
-import { useNavigate } from "react-router-dom";
-import GroundingItem from "../GroundingItem/GroundingItem";
+import { useReducer } from "react";
 import styles from "./GroundingChecklist.module.css";
-
-type GroundingStep = {
-  id: number;
-  emoji: string;
-  title: string;
-  description: string;
-};
-
-const groundingSteps: GroundingStep[] = [
-  {
-    id: 1,
-    emoji: "👁️",
-    title: "5 things you can see",
-    description: "Name them out loud or in your head.",
-  },
-  {
-    id: 2,
-    emoji: "✋",
-    title: "4 things you can touch",
-    description: "Notice their texture and feel.",
-  },
-  {
-    id: 3,
-    emoji: "👂",
-    title: "3 things you can hear",
-    description: "Focus on sounds near or far.",
-  },
-  {
-    id: 4,
-    emoji: "👃",
-    title: "2 things you can smell",
-    description: "Take a slow breath and notice scents.",
-  },
-  {
-    id: 5,
-    emoji: "👅",
-    title: "1 thing you can taste",
-    description: "Pay attention to any taste in your mouth.",
-  },
-];
+import { groundingSteps } from "../groundingSteps";
+import { groundingReducer, initialGroundingState } from "../groundingReducer";
+import ProgressDots from "../ProgressDots/ProgressDots";
+import GroundingCard from "../GroundingCard/GroundingCard";
+import { VscDebugRestart } from "react-icons/vsc";
 
 function GroundingChecklist() {
-  const [checkedItems, setCheckedItems] = useState<Record<number, boolean>>({});
-  const navigate = useNavigate();
+  const [state, dispatch] = useReducer(groundingReducer, initialGroundingState);
 
-  function toggleItem(id: number) {
-    setCheckedItems((prev) => ({
-      ...prev,
-      [id]: !prev[id],
-    }));
+  if (state.screen === "intro") {
+    return (
+      <div className={styles.page}>
+        <h1 className={styles.heading}>5-4-3-2-1 Grounding</h1>
+        <p className={styles.subheading}>
+          This technique uses your five senses to bring you back to the present
+          moment.
+        </p>
+
+        <button
+          className={styles.primary}
+          onClick={() => dispatch({ type: "BEGIN" })}
+        >
+          Begin Exercise
+        </button>
+      </div>
+    );
   }
 
-  const allChecked = groundingSteps.every((step) => checkedItems[step.id]);
+  if (state.screen === "done") {
+    return (
+      <div className={styles.page}>
+        <h1 className={styles.heading}>Well done</h1>
+        <p className={styles.subheading}>
+          You’ve completed the grounding exercise. Take a moment to notice how
+          you feel now.
+        </p>
 
-  useEffect(() => {
-    if (allChecked) {
-      navigate("/done");
-    }
-  }, [allChecked, navigate]);
+        <button
+          className={styles.primary}
+          onClick={() => dispatch({ type: "RESTART" })}
+        >
+          Start Again
+        </button>
+      </div>
+    );
+  }
+
+  const step = groundingSteps[state.activeIndex];
 
   return (
-    <div>
-      <h1 className={styles.heading}>Ground yourself</h1>
+    <div className={styles.page}>
+      <ProgressDots
+        total={groundingSteps.length}
+        currentIndex={state.activeIndex}
+      />
 
-      {groundingSteps.map((step) => (
-        <GroundingItem
-          key={step.id}
-          emoji={step.emoji}
-          title={step.title}
-          description={step.description}
-          checked={!!checkedItems[step.id]}
-          onToggle={() => toggleItem(step.id)}
-        />
-      ))}
+      <GroundingCard step={step} onNext={() => dispatch({ type: "NEXT" })} />
+      <button
+        className={styles.secondary}
+        onClick={() => dispatch({ type: "RESET" })}
+      >
+        <VscDebugRestart /> Start Over
+      </button>
     </div>
   );
 }
