@@ -23,8 +23,8 @@ export default function Breathing() {
       transition={{ duration: 1, ease: "easeInOut" }}
     >
       <main className={styles.page}>
-        <h1>You’re safe. This will pass</h1>
-        <p>Try to breathe together with the circle</p>
+        <h1>Box Breathing</h1>
+        <p>4-4-4-4 technique to calm your mind</p>
         <div className={styles.circlePlaceholder}>
           <BreathingCircle isRunning={isRunning} />
         </div>
