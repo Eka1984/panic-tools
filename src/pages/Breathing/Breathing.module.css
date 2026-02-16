@@ -18,6 +18,7 @@
   text-align: center;
   margin: 0 0;
   color: var(--text, #0d1b1e);
+  z-index: 1;
 }
 
 .page p {
@@ -28,6 +29,7 @@
   margin: 0 auto 3rem;
   color: var(--text, #0d1b1e);
   opacity: 0.7;
+  z-index: 1;
 }
 
 .primary {
@@ -41,6 +43,7 @@
   border: 0;
   border-radius: 90px;
   cursor: pointer;
+  z-index: 1;
 }
 
 .primary svg {
