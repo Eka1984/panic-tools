@@ -2,8 +2,8 @@
   width: 100%;
   max-width: 420px;
   margin: 0 auto;
-  padding: 24px env(safe-area-inset-right, 16px) 32px
-    env(safe-area-inset-left, 16px);
+  /* padding: 24px env(safe-area-inset-right, 16px) 32px
+    env(safe-area-inset-left, 16px); */
   /* min-height: 100vh; */
   display: flex;
   flex-direction: column;
