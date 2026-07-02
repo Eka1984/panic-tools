@@ -60,8 +60,7 @@
 }
 
 .circlePlaceholder {
-  /* Base: mobile-first */
-  width: 90%;
+  width: min(90vw, 55vh, 480px);
   aspect-ratio: 1;
   border-radius: 50%;
 
@@ -71,30 +70,13 @@
   margin: 0 auto;
 }
 
-/* ≥ 640px (small tablets) */
-@media (min-width: 640px) {
-  .circlePlaceholder {
-    width: 85%;
+@media (max-height: 720px) {
+  .page {
+    gap: 12px;
+    padding-top: 12px;
+    padding-bottom: 16px;
   }
-}
-
-/* ≥ 768px (tablets) */
-@media (min-width: 768px) {
-  .circlePlaceholder {
-    width: 50%;
-  }
-}
-
-/* ≥ 1024px (laptops) */
-@media (min-width: 1024px) {
-  .circlePlaceholder {
-    width: 50%;
-  }
-}
-
-/* ≥ 1280px (large screens) */
-@media (min-width: 1280px) {
-  .circlePlaceholder {
-    width: 40%;
+  .page p {
+    margin-bottom: 1rem;
   }
 }

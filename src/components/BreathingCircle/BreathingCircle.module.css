@@ -114,3 +114,9 @@
     font-size: 1.3rem !important;
   }
 }
+
+@media (max-height: 720px) {
+  .circleWrapper {
+    margin-bottom: 1rem;
+  }
+}
