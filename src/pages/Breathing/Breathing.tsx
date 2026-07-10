@@ -8,11 +8,16 @@ import { useState } from "react";
 
 export default function Breathing() {
   const [isRunning, setIsRunning] = useState(false);
+  const [exerciseStarted, setExerciseStarted] = useState(false);
 
   // const navigate = useNavigate();
 
   function handleToggle() {
     setIsRunning((prev) => !prev);
+  }
+
+  function handleStartExercise() {
+    setExerciseStarted(true);
   }
 
   return (
@@ -23,22 +28,35 @@ export default function Breathing() {
       transition={{ duration: 1, ease: "easeInOut" }}
     >
       <main className={styles.page}>
-        <h1>Box Breathing</h1>
-        <p>4-4-4-4 technique to calm your mind</p>
-        <div className={styles.circlePlaceholder}>
-          <BreathingCircle isRunning={isRunning} />
-        </div>
-        <button className={styles.primary} onClick={handleToggle}>
-          {isRunning ? (
-            <>
-              <FiPause size={20} /> Stop
-            </>
-          ) : (
-            <>
-              <FiPlay size={20} /> Start
-            </>
-          )}
-        </button>
+        {!exerciseStarted ? (
+          <section>
+            <h1>Box Breathing</h1>
+            <p>
+              Follow the circle’s rhythm: breathe in as it expands, gently hold
+              your breath when it pauses, and breathe out as it becomes smaller.
+            </p>
+            <button className={styles.primary} onClick={handleStartExercise}>
+              Begin Exercise
+            </button>
+          </section>
+        ) : (
+          <section>
+            <div className={styles.circlePlaceholder}>
+              <BreathingCircle isRunning={isRunning} />
+            </div>
+            <button className={styles.primary} onClick={handleToggle}>
+              {isRunning ? (
+                <>
+                  <FiPause size={20} /> Stop
+                </>
+              ) : (
+                <>
+                  <FiPlay size={20} /> Start
+                </>
+              )}
+            </button>
+          </section>
+        )}
       </main>
     </motion.div>
   );
