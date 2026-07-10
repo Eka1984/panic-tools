@@ -1,13 +1,8 @@
-/* === Global reset === */
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-}
-
+html,
 body {
   margin: 0;
   font-family: "Inter", sans-serif;
-  background-image: var(--bg-gradient);
+  background: var(--bg-gradient);
+  background-attachment: fixed;
   min-height: 100dvh;
 }

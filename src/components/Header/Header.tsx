@@ -9,9 +9,9 @@ function Header() {
       <div className={styles.inner}>
         <div className={styles.brand}>
           <h1 className={styles.logo}>🌿Just Breathe</h1>
-          <p className={styles.tagline}>
+          {/* <p className={styles.tagline}>
             You're safe. Take a moment to breathe.
-          </p>
+          </p> */}
         </div>
 
         <nav className={styles.nav} aria-label="Main">
