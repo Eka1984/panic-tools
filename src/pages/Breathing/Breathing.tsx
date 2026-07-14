@@ -1,6 +1,6 @@
 import styles from "./Breathing.module.css";
 import BreathingCircle from "../../components/BreathingCircle/BreathingCircle";
-// import { useNavigate } from "react-router-dom";
+import Button from "../../components/Button/Button";
 import { motion } from "framer-motion";
 import { FiPlay } from "react-icons/fi";
 import { FiPause } from "react-icons/fi";
@@ -35,9 +35,10 @@ export default function Breathing() {
               Follow the circle’s rhythm: breathe in as it expands, gently hold
               your breath when it pauses, and breathe out as it becomes smaller.
             </p>
-            <button className={styles.primary} onClick={handleStartExercise}>
+            {/* <button className={styles.primary} onClick={handleStartExercise}>
               Begin Exercise
-            </button>
+            </button> */}
+            <Button onClick={handleStartExercise}>Begin Exercise</Button>
           </section>
         ) : (
           <section>

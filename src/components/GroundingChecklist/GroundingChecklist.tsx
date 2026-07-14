@@ -5,6 +5,7 @@ import { groundingReducer, initialGroundingState } from "../groundingReducer";
 import ProgressDots from "../ProgressDots/ProgressDots";
 import GroundingCard from "../GroundingCard/GroundingCard";
 import { VscDebugRestart } from "react-icons/vsc";
+import Button from "../Button/Button";
 
 function GroundingChecklist() {
   const [state, dispatch] = useReducer(groundingReducer, initialGroundingState);
@@ -18,12 +19,9 @@ function GroundingChecklist() {
           moment.
         </p>
 
-        <button
-          className={styles.primary}
-          onClick={() => dispatch({ type: "BEGIN" })}
-        >
+        <Button onClick={() => dispatch({ type: "BEGIN" })}>
           Begin Exercise
-        </button>
+        </Button>
       </div>
     );
   }
