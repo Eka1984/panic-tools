@@ -1,6 +1,6 @@
 import styles from "./Breathing.module.css";
 import BreathingCircle from "../../components/BreathingCircle/BreathingCircle";
-import Button from "../../components/Button/Button";
+import ExerciseIntro from "../../components/ExerciseIntro/ExerciseIntro";
 import { motion } from "framer-motion";
 import { FiPlay } from "react-icons/fi";
 import { FiPause } from "react-icons/fi";
@@ -29,18 +29,23 @@ export default function Breathing() {
     >
       <main className={styles.page}>
         {!exerciseStarted ? (
-          <section>
-            <h1>Box Breathing</h1>
-            <p>
-              Follow the circle’s rhythm: breathe in as it expands, gently hold
-              your breath when it pauses, and breathe out as it becomes smaller.
-            </p>
-            {/* <button className={styles.primary} onClick={handleStartExercise}>
-              Begin Exercise
-            </button> */}
-            <Button onClick={handleStartExercise}>Begin Exercise</Button>
-          </section>
+          <ExerciseIntro
+            title="Box Breathing"
+            description="Follow the circle’s rhythm: breathe in as it expands, gently hold your breath when it pauses, and breathe out as it becomes smaller."
+            onClick={handleStartExercise}
+          />
         ) : (
+          // <section>
+          //   <h1>Box Breathing</h1>
+          //   <p>
+          //     Follow the circle’s rhythm: breathe in as it expands, gently hold
+          //     your breath when it pauses, and breathe out as it becomes smaller.
+          //   </p>
+          //   {/* <button className={styles.primary} onClick={handleStartExercise}>
+          //     Begin Exercise
+          //   </button> */}
+          //   <Button onClick={handleStartExercise}>Begin Exercise</Button>
+          // </section>
           <section>
             <div className={styles.circlePlaceholder}>
               <BreathingCircle isRunning={isRunning} />

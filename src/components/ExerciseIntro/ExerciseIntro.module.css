@@ -1,0 +1,17 @@
+.heading {
+  margin-bottom: 3rem;
+  color: #0b5563;
+}
+
+.subheading {
+  color: #3a6b7a;
+  font-size: 1.1rem;
+  margin-bottom: 1.5rem;
+}
+
+.page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 18px 14px 28px;
+}

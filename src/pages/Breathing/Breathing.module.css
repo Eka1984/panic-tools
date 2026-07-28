@@ -1,36 +1,13 @@
 .page {
   width: 100%;
-  /* max-width: 420px; */
   margin: 0 auto;
   padding: 24px env(safe-area-inset-right, 16px) 32px
     env(safe-area-inset-left, 16px);
-  /* min-height: 100vh; */
   display: flex;
   flex-direction: column;
   gap: 16px;
   align-items: center;
   text-align: center;
-}
-
-.page h1 {
-  font-size: clamp(1.5rem, 4vw + 0.5rem, 2rem);
-  font-weight: 600;
-  text-align: center;
-  margin-bottom: 3rem;
-  color: var(--text, #0d1b1e);
-  z-index: 1;
-}
-
-.page p {
-  font-size: clamp(1rem, 1.5vw + 0.4rem, 1.25rem);
-  padding: 0 10px;
-  text-align: center;
-  line-height: 1.6;
-  max-width: 40ch;
-  margin: 0 auto 3rem;
-  color: var(--text, #0d1b1e);
-  opacity: 0.7;
-  z-index: 1;
 }
 
 .primary {

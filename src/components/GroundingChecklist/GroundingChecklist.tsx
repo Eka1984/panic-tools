@@ -5,24 +5,18 @@ import { groundingReducer, initialGroundingState } from "../groundingReducer";
 import ProgressDots from "../ProgressDots/ProgressDots";
 import GroundingCard from "../GroundingCard/GroundingCard";
 import { VscDebugRestart } from "react-icons/vsc";
-import Button from "../Button/Button";
+import ExerciseIntro from "../ExerciseIntro/ExerciseIntro";
 
 function GroundingChecklist() {
   const [state, dispatch] = useReducer(groundingReducer, initialGroundingState);
 
   if (state.screen === "intro") {
     return (
-      <div className={styles.page}>
-        <h1 className={styles.heading}>Grounding</h1>
-        <p className={styles.subheading}>
-          This technique uses your five senses to bring you back to the present
-          moment.
-        </p>
-
-        <Button onClick={() => dispatch({ type: "BEGIN" })}>
-          Begin Exercise
-        </Button>
-      </div>
+      <ExerciseIntro
+        title="Grounding"
+        description="This technique uses your five senses to bring you back to the present moment."
+        onClick={() => dispatch({ type: "BEGIN" })}
+      />
     );
   }
 
