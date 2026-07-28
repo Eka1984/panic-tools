@@ -22,20 +22,12 @@ function GroundingChecklist() {
 
   if (state.screen === "done") {
     return (
-      <div className={styles.page}>
-        <h1 className={styles.heading}>Well done</h1>
-        <p className={styles.subheading}>
-          You’ve completed the grounding exercise. Take a moment to notice how
-          you feel now.
-        </p>
-
-        <button
-          className={styles.primary}
-          onClick={() => dispatch({ type: "RESTART" })}
-        >
-          Start Again
-        </button>
-      </div>
+      <ExerciseIntro
+        title="Well done!"
+        description="You’ve completed the grounding exercise. Take a moment to notice how you feel now."
+        onClick={() => dispatch({ type: "RESTART" })}
+        buttonText="Start Over"
+      />
     );
   }
 

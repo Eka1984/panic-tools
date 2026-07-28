@@ -5,15 +5,20 @@ type ExerciseIntroProps = {
   onClick: () => void;
   title: string;
   description: string;
+  buttonText?: string;
 };
 
-function ExerciseIntro({ onClick, title, description }: ExerciseIntroProps) {
+function ExerciseIntro({
+  onClick,
+  title,
+  description,
+  buttonText,
+}: ExerciseIntroProps) {
   return (
     <section className={styles.page}>
       <h1 className={styles.heading}>{title}</h1>
       <p className={styles.subheading}>{description}</p>
-
-      <Button onClick={onClick}>Begin Exercise</Button>
+      <Button onClick={onClick}>{buttonText || "Begin Exercise"}</Button>
     </section>
   );
 }
