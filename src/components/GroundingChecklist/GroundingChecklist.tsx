@@ -13,7 +13,7 @@ function GroundingChecklist() {
   if (state.screen === "intro") {
     return (
       <div className={styles.page}>
-        <h1 className={styles.heading}>5-4-3-2-1 Grounding</h1>
+        <h1 className={styles.heading}>Grounding</h1>
         <p className={styles.subheading}>
           This technique uses your five senses to bring you back to the present
           moment.

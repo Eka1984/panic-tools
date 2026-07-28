@@ -5,4 +5,5 @@ body {
   background: var(--bg-gradient);
   background-attachment: fixed;
   min-height: 100dvh;
+  padding: 0 4px;
 }

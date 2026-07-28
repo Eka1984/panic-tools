@@ -1,7 +1,7 @@
 .header {
   top: 0;
   z-index: 10;
-  padding: 20px 16px 18px;
+  padding: 10px 10px;
   backdrop-filter: blur(10px);
 }
 
@@ -12,7 +12,7 @@
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  gap: 30px;
+  gap: 20px;
   text-align: center;
 }
 
@@ -41,7 +41,7 @@
 
 .nav {
   display: flex;
-  gap: 14px;
+  gap: 6px;
   justify-content: end;
   align-items: center;
   /* flex-wrap: wrap; */
@@ -51,11 +51,8 @@
 .pill {
   text-decoration: none;
   color: var(--text, #0d1b1e);
-  /* font-size: 1.3rem !important; */
   flex: 1;
-  /* padding: 10px 40px !important; */
   min-height: 25px;
-  /* min-width: 100px; */
   max-width: 200px;
   padding: 0 10px;
   font-size: 0.8rem;

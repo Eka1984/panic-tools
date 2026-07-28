@@ -1,8 +1,9 @@
 .circleWrapper {
   position: relative;
-  width: 100%;
-  height: 100%;
-  margin-bottom: 3rem;
+  width: clamp(190px, 68vw, 420px);
+  aspect-ratio: 1;
+  height: auto;
+  margin: 0 auto 3rem;
 }
 
 .circle {
@@ -12,7 +13,7 @@
   background: var(--circle-gradient);
   position: relative;
   z-index: 0;
-  transform: scale(0.7);
+  transform: scale(0.65);
 }
 
 .circle.running {
@@ -60,25 +61,19 @@
     opacity: 0.4;
   }
   100% {
-    transform: translate(-50%, -50%) scale(1.5);
+    transform: translate(-50%, -50%) scale(1.4);
     opacity: 0;
   }
 }
 
-.inhale {
-  transform: scale(1);
-}
-
-.exhale {
-  transform: scale(0.7);
-}
-
+.inhale,
 .inHold {
-  transform: scale(1);
+  transform: scale(0.95);
 }
 
+.exhale,
 .outHold {
-  transform: scale(0.7);
+  transform: scale(0.65);
 }
 
 .textWrapper {
@@ -92,28 +87,28 @@
 }
 
 .text {
-  font-size: 1rem !important;
+  font-size: clamp(1rem, 4vw, 1.35rem) !important;
   opacity: 1;
   color: white !important;
 }
 
 .count {
-  font-size: 4rem !important;
+  font-size: clamp(2.75rem, 12vw, 4rem) !important;
   color: white !important;
   margin-bottom: 0.5rem;
 }
 
-@media (max-width: 1280px) {
+/* @media (max-width: 1280px) {
   .text {
     font-size: 1.5rem !important;
   }
-}
+} */
 
-@media (max-width: 425px) {
+/* @media (max-width: 425px) {
   .text {
     font-size: 1.3rem !important;
   }
-}
+} */
 
 @media (max-height: 720px) {
   .circleWrapper {
