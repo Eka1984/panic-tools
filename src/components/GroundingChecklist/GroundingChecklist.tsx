@@ -34,7 +34,7 @@ function GroundingChecklist() {
   const step = groundingSteps[state.activeIndex];
 
   return (
-    <div className={styles.page}>
+    <div>
       <ProgressDots
         total={groundingSteps.length}
         currentIndex={state.activeIndex}

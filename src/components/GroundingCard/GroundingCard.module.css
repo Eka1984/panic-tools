@@ -1,5 +1,7 @@
 .card {
-  /* width: min(520px, 92vw); */
+  width: 100%;
+  max-width: 520px;
+  box-sizing: border-box;
   margin: 0 auto;
   padding: 22px 18px 18px;
   border-radius: 22px;
