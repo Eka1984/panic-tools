@@ -8,12 +8,13 @@ import Header from "./components/Header/Header";
 import NotFound from "./pages/NotFound";
 import ScrollToTop from "./components/ScrollToTop/ScrollToTop";
 import PageContainer from "./components/PageContainer/PageContainer";
+import styles from "./App.module.css";
 
 export default function App() {
   const location = useLocation();
 
   return (
-    <>
+    <div className={styles.app}>
       <ScrollToTop />
       <Header />
       <PageContainer>
@@ -26,6 +27,6 @@ export default function App() {
           </Routes>
         </AnimatePresence>
       </PageContainer>
-    </>
+    </div>
   );
 }

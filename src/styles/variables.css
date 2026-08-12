@@ -9,6 +9,9 @@
   --accent: #51848f;
   --lime-green: #58b392;
 
+  /* Layout */
+  --header-height: 180px;
+
   /* Gradient */
   --bg-gradient: linear-gradient(
     180deg,
