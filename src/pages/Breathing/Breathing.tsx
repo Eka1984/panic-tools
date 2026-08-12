@@ -22,6 +22,7 @@ export default function Breathing() {
 
   return (
     <motion.div
+      className={styles.motionWrapper}
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
@@ -35,17 +36,6 @@ export default function Breathing() {
             onClick={handleStartExercise}
           />
         ) : (
-          // <section>
-          //   <h1>Box Breathing</h1>
-          //   <p>
-          //     Follow the circle’s rhythm: breathe in as it expands, gently hold
-          //     your breath when it pauses, and breathe out as it becomes smaller.
-          //   </p>
-          //   {/* <button className={styles.primary} onClick={handleStartExercise}>
-          //     Begin Exercise
-          //   </button> */}
-          //   <Button onClick={handleStartExercise}>Begin Exercise</Button>
-          // </section>
           <section>
             <div className={styles.circlePlaceholder}>
               <BreathingCircle isRunning={isRunning} />

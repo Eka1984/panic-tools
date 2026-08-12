@@ -1,13 +1,15 @@
 .page {
   width: 100%;
   margin: 0 auto;
-  padding: 24px env(safe-area-inset-right, 16px) 32px
-    env(safe-area-inset-left, 16px);
+  /* padding: 24px env(safe-area-inset-right, 16px) 32px
+    env(safe-area-inset-left, 16px); */
   display: flex;
   flex-direction: column;
   gap: 16px;
   align-items: center;
   text-align: center;
+  flex: 1;
+  padding-top: 8vh;
 }
 
 .primary {
