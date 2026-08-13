@@ -9,6 +9,7 @@ import NotFound from "./pages/NotFound";
 import ScrollToTop from "./components/ScrollToTop/ScrollToTop";
 import PageContainer from "./components/PageContainer/PageContainer";
 import styles from "./App.module.css";
+import MadeBy from "./components/MadeBy/MadeBy";
 
 export default function App() {
   const location = useLocation();
@@ -27,6 +28,7 @@ export default function App() {
           </Routes>
         </AnimatePresence>
       </PageContainer>
+      <MadeBy />
     </div>
   );
 }
