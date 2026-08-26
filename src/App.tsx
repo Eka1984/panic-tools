@@ -10,6 +10,7 @@ import ScrollToTop from "./components/ScrollToTop/ScrollToTop";
 import PageContainer from "./components/PageContainer/PageContainer";
 import styles from "./App.module.css";
 import MadeBy from "./components/MadeBy/MadeBy";
+import LandingPage from "./pages/LandingPage/LandingPage";
 
 export default function App() {
   const location = useLocation();
@@ -21,7 +22,8 @@ export default function App() {
       <PageContainer>
         <AnimatePresence mode="wait">
           <Routes location={location} key={location.pathname}>
-            <Route path="/" element={<Breathing />} />
+            <Route path="/" element={<LandingPage />} />
+            <Route path="/breathing" element={<Breathing />} />
             <Route path="/grounding" element={<Grounding />} />
             <Route path="/done" element={<Done />} />
             <Route path="*" element={<NotFound />} />
