@@ -2,17 +2,16 @@ import { NavLink } from "react-router-dom";
 import styles from "./Header.module.css";
 import { FiWind } from "react-icons/fi";
 import { TbCircleDot } from "react-icons/tb";
+import logoImg from "../../assets/logo.png";
 
 function Header() {
   return (
     <header className={styles.header}>
       <div className={styles.inner}>
-        <div className={styles.brand}>
-          <h1 className={styles.logo}>🌿Just Breathe</h1>
-          {/* <p className={styles.tagline}>
-            You're safe. Take a moment to breathe.
-          </p> */}
-        </div>
+        <NavLink to="/" className={styles.brand}>
+          <img src={logoImg} alt="" className={styles.logoIcon} />
+          <span className={styles.logoText}>Just Breathe</span>
+        </NavLink>
 
         <nav className={styles.nav} aria-label="Main">
           <NavLink

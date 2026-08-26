@@ -1,7 +1,7 @@
 .header {
   top: 0;
   z-index: 10;
-  padding: 10px 10px;
+  padding: 5px 5px;
   backdrop-filter: blur(10px);
 }
 
@@ -18,18 +18,24 @@
 
 .brand {
   display: flex;
-  flex-direction: column;
-  align-items: start;
-  gap: 6px;
-  margin-bottom: 0.8rem;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  flex-shrink: 0;
 }
 
-.logo {
-  margin: 0;
-  font-weight: 600;
+.logoIcon {
+  width: 44px;
+  height: 44px;
+  object-fit: contain;
+}
+
+.logoText {
+  font-size: 1.15rem;
+  font-weight: 400;
+  letter-spacing: 0.1px;
   color: var(--text, #0d1b1e);
-  font-size: 0.7rem; /* mobile */
-  letter-spacing: 0.2px;
+  white-space: nowrap;
 }
 
 .tagline {
@@ -102,12 +108,17 @@
 
 /* ≥ 1024px (desktops) */
 @media (min-width: 1024px) {
-  .logo {
-    font-size: 1.3rem;
-  }
-
   .tagline {
     font-size: 0.9rem;
+  }
+
+  .logoIcon {
+    width: 60px;
+    height: 60px;
+  }
+
+  .logoText {
+    font-size: 1.3rem;
   }
 
   .pill {
