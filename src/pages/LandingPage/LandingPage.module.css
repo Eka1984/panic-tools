@@ -5,6 +5,14 @@ h1 {
   letter-spacing: 0.6px;
 }
 
+h2 {
+  font-size: clamp(1.25rem, 5vw, 2.5rem);
+  color: var(--text);
+  font-weight: 600;
+  margin-bottom: 1rem;
+  letter-spacing: 0.6px;
+}
+
 p {
   margin-bottom: 1rem;
 }
@@ -16,9 +24,76 @@ p {
   justify-content: center;
   text-align: center;
   margin-top: 2rem;
+  margin-bottom: 4rem;
 }
 
 .heroLogo {
-  width: clamp(90px, 12vw, 160px);
+  width: clamp(100px, 12vw, 180px);
   height: auto;
+}
+
+.ChooseExercise {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.cardContainer {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  align-items: center;
+}
+
+.howToUse {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 4rem;
+  margin-bottom: 4rem;
+  background-color: var(--accent);
+  padding: 1.5rem;
+  border-radius: 16px;
+}
+
+.howToUseText {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.howToUseText p {
+  text-align: left;
+  margin: 0;
+  color: var(--sky);
+  width: 100%;
+  max-width: none;
+}
+
+.howToUseText h3 {
+  margin-bottom: 0.5rem;
+  color: var(--sky);
+}
+
+.howToUseImg {
+  width: 20%;
+  height: auto;
+}
+
+@media (max-width: 425px) {
+  .cardContainer {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 768px) {
+  .howToUse {
+    flex-direction: column;
+  }
+  .howToUseImg {
+    width: 25%;
+    height: auto;
+  }
 }

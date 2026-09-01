@@ -1,0 +1,31 @@
+.card {
+  padding: 24px;
+  min-width: 200px;
+  border-radius: 16px;
+  border: 1px solid color-mix(in srgb, var(--accent) 30%, transparent);
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  transition: background-color 0.2s ease;
+}
+
+.card:hover {
+  background-color: var(--mint);
+}
+
+.card:focus-visible {
+  outline: 3px solid var(--accent);
+  outline-offset: 3px;
+}
+
+h3 {
+  color: var(--text);
+}
+
+img {
+  width: 50%;
+  height: auto;
+}
