@@ -82,9 +82,41 @@ p {
   height: auto;
 }
 
+.howItHelps {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 4rem;
+  margin-bottom: 4rem;
+}
+
+.helpRow {
+  display: flex;
+  flex-direction: row;
+}
+
+.helpItem {
+  flex: 1;
+  padding: 0 2rem;
+}
+
+.helpItem + .helpItem {
+  border-left: 1px solid rgba(81, 132, 143, 0.25);
+}
+
 @media (max-width: 425px) {
   .cardContainer {
     flex-direction: column;
+  }
+
+  .helpRow {
+    flex-direction: column;
+  }
+
+  .helpItem + .helpItem {
+    border-left: none;
+    border-top: 1px solid rgba(81, 132, 143, 0.18);
   }
 }
 

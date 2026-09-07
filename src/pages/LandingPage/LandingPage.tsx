@@ -5,6 +5,8 @@ import LungsSymbol from "../../assets/lungs.png";
 import BrainSymbol from "../../assets/brain.png";
 import MeditationSymbol from "../../assets/meditation.png";
 
+import HeartSymbol from "../../assets/heart.png";
+
 function LandingPage() {
   return (
     <>
@@ -33,6 +35,35 @@ function LandingPage() {
             description="A simple grounding exercise to help you stay present."
             route="/grounding"
           />
+        </div>
+      </section>
+      <section className={styles.howItHelps}>
+        <h2>How it helps</h2>
+        <div className={styles.helpRow}>
+          <div className={styles.helpItem}>
+            <ExerciseCard
+              image={HeartSymbol}
+              title="Calm your body"
+              description="Slow breathing activates your body's natural relaxation response."
+              variant="borderless"
+            />
+          </div>
+          <div className={styles.helpItem}>
+            <ExerciseCard
+              image={HeartSymbol}
+              title="Clear your mind"
+              description="Grounding helps you step out of overwhelming thoughts and return to the present."
+              variant="borderless"
+            />
+          </div>
+          <div className={styles.helpItem}>
+            <ExerciseCard
+              image={HeartSymbol}
+              title="Support your wellbeing"
+              description="Regular practice can help you feel more balanced and in control."
+              variant="borderless"
+            />
+          </div>
         </div>
       </section>
       <section className={styles.howToUse}>
