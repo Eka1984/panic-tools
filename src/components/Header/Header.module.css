@@ -1,8 +1,13 @@
 .header {
+  position: relative;
   top: 0;
   z-index: 10;
   padding: 5px 5px;
   backdrop-filter: blur(10px);
+}
+
+.menuButton {
+  display: none;
 }
 
 .inner {
@@ -83,6 +88,32 @@
   background-color: var(--accent, #51848f);
   color: white;
   box-shadow: 0 6px 18px rgba(13, 27, 30, 0.08);
+}
+
+@media (max-width: 768px) {
+  .menuButton {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    color: var(--text);
+    cursor: pointer;
+  }
+
+  .nav {
+    display: none;
+    position: absolute;
+    top: 100%;
+    right: 16px;
+    flex-direction: column;
+  }
+
+  .nav.open {
+    display: flex;
+    align-items: flex-end;
+  }
 }
 
 /* ≥ 768px (tablets) */
