@@ -22,7 +22,6 @@ export default function Breathing() {
 
   return (
     <motion.div
-      className={styles.motionWrapper}
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
