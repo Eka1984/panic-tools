@@ -6,16 +6,10 @@ import BrainSymbol from "../../assets/brain.png";
 import MeditationSymbol from "../../assets/meditation.png";
 import HeartSymbol from "../../assets/heart.png";
 import { FiInfo } from "react-icons/fi";
-import { motion } from "framer-motion";
 
 function LandingPage() {
   return (
-    <motion.div
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      exit={{ opacity: 0 }}
-      transition={{ duration: 1, ease: "easeInOut" }}
-    >
+    <>
       <section className={styles.hero}>
         <h1 className={styles.title}>
           Find your calm. <br /> One breath at a time.
@@ -106,7 +100,7 @@ function LandingPage() {
           professional if you have concerns.
         </p>
       </section>
-    </motion.div>
+    </>
   );
 }
 
